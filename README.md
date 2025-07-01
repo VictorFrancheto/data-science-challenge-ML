@@ -29,7 +29,7 @@ Este repositorio contiene las soluciones a los tres ejercicios propuestos en el 
 
 **Archivo de entrada**: `ofertas_relampago.csv`  
 El objetivo es realizar un análisis exploratorio (EDA) y extraer insights relevantes sobre el comportamiento de este tipo de ofertas.  
-Notebook correspondiente: **notebooks/1_ofertas_relampago.ipynb**
+Notebook correspondiente: **notebooks/01_ofertas_relampago.ipynb**
 
 ---
 
@@ -37,7 +37,7 @@ Notebook correspondiente: **notebooks/1_ofertas_relampago.ipynb**
 
 **Archivos de entrada**: `items_titles.csv`, `items_titles_test.csv`  
 Este ejercicio consiste en calcular la similitud entre títulos de productos y listar los pares más similares, sin utilizar modelos preentrenados. También se analiza la escalabilidad y el tiempo de ejecución de la solución.  
-Notebook correspondiente: **notebooks/2\_similitud\_productos.ipynb**
+Notebook correspondiente: **notebooks/02_similitud_products.ipynb**
 
 
 Entregables: **results/similarity_results.csv**
@@ -48,7 +48,7 @@ Entregables: **results/similarity_results.csv**
 
 **Archivo de entrada**: `full_devices.csv`  
 El objetivo es predecir la probabilidad de falla de un dispositivo con un día de anticipación, utilizando técnicas de series temporales y mantenimiento predictivo.  
-Notebook correspondiente: **notebooks/3_prediccion_falla.ipynb**
+Notebook correspondiente: **notebooks/03_previsao_falla.ipynb**
 
 Entregables: **results/predictions.csv**
 
