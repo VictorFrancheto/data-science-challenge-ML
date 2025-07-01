@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/carmenscar/challenge/blob/01a6d27815dc368bf45759d9e6d045aa83621bfa/image.png">
+  <img src="https://github.com/VictorFrancheto/data-science-challenge-ML/blob/main/image.png">
 </p>
 
 
@@ -50,4 +50,5 @@ El objetivo es predecir la probabilidad de falla de un dispositivo con un día d
 Notebook correspondiente: [`notebooks/3_prediccion_falla.ipynb`](./notebooks/3_prediccion_falla.ipynb)
 
 Entregables: [`results/predictions.csv`](./results/predictions.csv)
+
 ---
