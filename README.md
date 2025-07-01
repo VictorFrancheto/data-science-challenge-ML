@@ -40,7 +40,7 @@ Este ejercicio consiste en calcular la similitud entre títulos de productos y l
 Notebook correspondiente: **notebooks/2\_similitud\_productos.ipynb**
 
 
-Entregables: **similarity_results.csv**
+Entregables: **results/similarity_results.csv**
 
 ---
 
