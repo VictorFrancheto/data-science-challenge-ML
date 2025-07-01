@@ -31,6 +31,28 @@ def add_date_features(df):
 
 
 def preprocess_data(df):
+    '''
+    Preprocesa el DataFrame aplicando transformaciones necesarias para el modelado.
+
+    Operaciones realizadas:
+    - Convierte la columna 'date' a formato datetime.
+    - Agrega nuevas características temporales a partir de la fecha.
+    - Elimina registros del dispositivo 'Z1F2'.
+    - Crea la variable objetivo ('target') como el valor de 'failure' del día siguiente por dispositivo.
+    - Extrae el modelo del dispositivo desde la columna 'device'.
+    - Elimina las columnas 'device', 'date' y 'attribute8'.
+    - Aplica codificación one-hot a las variables categóricas.
+
+    Parámetros:
+    ----------
+    df : pd.DataFrame
+        DataFrame original con los datos brutos.
+
+    Retorna:
+    -------
+    pd.DataFrame
+        DataFrame preprocesado listo para el entrenamiento del modelo.
+    '''
     df['date'] = pd.to_datetime(df['date'])
     df = add_date_features(df)
     df = df[df['device'] != 'Z1F2']
@@ -84,6 +106,26 @@ def split_and_normalize(X, y, test_size=0.2, random_state=42):
     return x_train_norm, x_test_norm, y_train, y_test
 
 def prepare_features_targets(df):
+    '''
+    Separa el DataFrame en variables predictoras (X) y variable objetivo (y).
+
+    Operaciones realizadas:
+    - Elimina las filas con valores nulos.
+    - Extrae la columna 'target' como variable objetivo.
+    - Elimina la columna 'target' del conjunto de características.
+
+    Parámetros:
+    ----------
+    df : pd.DataFrame
+        DataFrame preprocesado que contiene la columna 'target'.
+
+    Retorna:
+    -------
+    X : pd.DataFrame
+        DataFrame con las características (features) del modelo.
+    y : pd.Series
+        Serie con la variable objetivo (target).
+    '''
     X = df.copy().dropna()
     y = X['target']
     X = X.drop('target', axis=1)

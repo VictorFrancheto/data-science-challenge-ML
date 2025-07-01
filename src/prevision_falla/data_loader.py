@@ -3,23 +3,41 @@ from pathlib import Path
 from config import DATA_DIR, RESULTS_DIR
 
 def load_data(filename='full_devices.csv'):
+    '''
+    Carga un archivo CSV desde el directorio de datos.
+
+    Parámetros:
+    ----------
+    filename : str, opcional
+        Nombre del archivo CSV a cargar. Por defecto es 'full_devices.csv'.
+
+    Retorna:
+    -------
+    pd.DataFrame
+        Un DataFrame con los datos cargados desde el archivo.
+
+    Lanza:
+    -----
+    FileNotFoundError
+        Si el archivo especificado no se encuentra en el directorio.
+    '''
     filepath = DATA_DIR / filename
     
     if not filepath.exists():
         raise FileNotFoundError(f"Arquivo não encontrado: {filepath}")
     df = pd.read_csv(filepath, encoding='latin1')
+
     return df
 
-from pathlib import Path
 
 def save_predictions(df, filename='predictions.csv'):
     '''
-    Salva um DataFrame com as colunas ['prob_failure', 'predicted_class', 'true_class']
-    no diretório /results.
+    Guarda un DataFrame con las columnas ['prob_failure', 'predicted_class', 'true_class']
+    en el directorio /results.
 
-    Args:
-        df (pd.DataFrame): DataFrame contendo essas colunas.
-        filename (str): nome do arquivo de saída.
+    Parámetros:
+        df (pd.DataFrame): DataFrame que contiene dichas columnas.
+        filename (str): Nombre del archivo de salida.
     '''
     output_dir = DATA_DIR / filename
     output_dir = Path(__file__).resolve().parent.parent.parent / 'results'
@@ -31,6 +49,6 @@ def save_predictions(df, filename='predictions.csv'):
     print(f'Resultados salvos em: {output_path}')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     df = load_data()
     print(f"Dados carregados: {df.shape[0]} linhas, {df.shape[1]} colunas")
